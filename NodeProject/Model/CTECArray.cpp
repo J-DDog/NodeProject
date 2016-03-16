@@ -67,6 +67,29 @@ int CTECArray<Type>:: Length()
 }
 
 template <class Type>
+int CTECArray<Type>::indexOf(Type value)
+{
+    assert(this->size > 0);
+    int returnIndexOfValue;
+    returnIndexOfValue = -1;
+    ArrayNode<Type>* current = head;
+    for(int index = 0; index < size; index++)
+    {
+        if(current->getValue() != value)
+        {
+            current = current->getNext();
+        }
+        else
+        {
+            returnIndexOfValue = index;
+            break;
+        }
+        
+    }
+    return returnIndexOfValue;
+}
+
+template <class Type>
 Type CTECArray<Type>::	get(int position)
 {
 
