@@ -104,6 +104,16 @@ int CTECList<Type>::indexOf(Type value)
     return returnIndexOfValue;
 }
 
+template <class Type>
+void CTECList<Type>:: swap(int indexOne, int indexTwo)
+{
+    assert(indexOne < size && indexTwo < size);
+    
+    Type temp = getFromIndex(indexOne);
+    set(indexOne, getFromIndex(indexTwo));
+    set(indexTwo, temp);
+}
+
 //Private helper method
 template <class Type>
 void CTECList<Type>::calculateSize()
@@ -377,3 +387,29 @@ void CTECList<Type>::set(int index, const Type& value)
 		currentNode->setValue(value);
 	}
 }
+
+template <class Type>
+void CTECList<Type>:: selectionSort()
+{
+    int innerLoop, outerLoop;
+    
+    for(outerLoop = 0; outerLoop < size-1; outerLoop++)
+    {
+        int selectedMin = outerLoop;
+        for(innerLoop = outerLoop+1; innerLoop < size; innerLoop++)
+        {
+            if(getFromIndex(innerLoop) < getFromIndex(selectedMin))
+            {
+                selectedMin = innerLoop;
+            }
+        }
+        
+        if(selectedMin != outerLoop)
+        {
+            swap(selectedMin, outerLoop);
+        }
+        
+    }
+}
+
+

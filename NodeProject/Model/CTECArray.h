@@ -20,8 +20,9 @@ public:
     int nextIndexOf(int startingIndex, Type searchValue);
 	Type get(int position);
 	void set(int position, const Type& value);
-
+    void selectionSort();
 private:
+    void swap(int indexOne, int indexTwo);
 	int size;
 	ArrayNode<Type>* head;
 };

@@ -30,11 +30,18 @@ public:
 	void start();
 private:
 	CTECArray<int>* notHipsterInts;
+    CTECList<int>* sortable;
 	CTECList<string>* coolStrings;
 	Timer arrayTimer;
 
-	void setupIntArray();
-	void setupStringArray();
+    void sortData();
+    void testList();
+    void searchTest();
+    
+    int * mergeData;
+    void doMergesort();
+    void mergeSort(int data [], int size);
+    void merge(int data [], int sizeOne, int sizeTwo);
 	void print();
 };
 

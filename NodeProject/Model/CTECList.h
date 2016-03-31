@@ -29,12 +29,14 @@ public:
 	Type removeFromFront();
 	Type removeFromEnd();
 	Type removeFromIndex(int index);
-	void set(int index, const Type& value);
+    void set(int index, const Type& value);
+    void selectionSort();
 private:
 	int size;
 	ArrayNode<Type>* head;
 	ArrayNode<Type>* end;
-
+    
+    void swap(int indexOne, int indexTwo);
 	void calculateSize();
 };
 #endif /* MODEL_CTECLIST_H_ */

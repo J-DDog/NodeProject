@@ -166,3 +166,42 @@ void CTECArray<Type>::	set(int position, const Type& value)
 	}
     
 }
+
+template <class Type>
+void CTECArray<Type>:: selectionSort()
+{
+    int innerLoop, outerLoop;
+    
+    for(outerLoop = 0; outerLoop < size-1; outerLoop++)
+    {
+        int selectedMin = outerLoop;
+        for(innerLoop = outerLoop+1; innerLoop < size; innerLoop++)
+        {
+            if(get(innerLoop) < get(selectedMin))
+            {
+                selectedMin = innerLoop;
+            }
+        }
+        
+        if(selectedMin != outerLoop)
+        {
+            swap(outerLoop, selectedMin);
+        }
+        
+    }
+}
+
+template <class Type>
+void CTECArray<Type>:: swap(int indexOne, int indexTwo)
+{
+    assert(indexOne < size && indexTwo < size);
+    ArrayNode<Type>* first = get(indexOne);
+    ArrayNode<Type>* secound = get(indexTwo);
+    ArrayNode<Type>* temp = new ArrayNode<Type>();
+    
+    temp->setValue(first->getValue());
+    first->setValue(secound->getValue());
+    secound->setValue(temp->getValue);
+    
+    delete temp;
+}
