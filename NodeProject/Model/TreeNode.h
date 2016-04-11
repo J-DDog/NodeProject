@@ -20,10 +20,10 @@ public:
     TreeNode(const Type& value, TreeNode<Type>* parent);
     
     TreeNode<Type>* getParent();
-    TreeNode<Type>* getLeftChild();
-    TreeNode<Type>* getRightChild();
     void setParent(TreeNode<Type>* parent);
+    TreeNode<Type>* getLeftChild();
     void setLeftChild(TreeNode<Type>* leftChild);
+    TreeNode<Type>* getRightChild();    
     void setRightChild(TreeNode<Type>* reftChild);
     
 private:
