@@ -42,7 +42,11 @@ private:
     void doMergesort();
     void mergeSort(int data [], int size);
     void merge(int data [], int sizeOne, int sizeTwo);
-	void print();
+    void doQuickSort();
+    void quickSort(int first, int last);
+    int partition(int first, int last);
+    void swap(int first, int last);
+    void print();
 };
 
 #endif /* COM_CTEC_CONTROLLER_NODECONTROLLER_H_ */
