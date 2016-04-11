@@ -17,12 +17,18 @@ class CTECTree
     CTECTree();
     CTECTree(const Type& value);
     
-    void insert(const Type& value);
+    bool insert(const Type& value);
+    bool contains(Type value);
+    Type remove(const Type& value);
+    int getHeight();
+    bool isBalanced();
+    TreeNode<Type>* getRoot();
     
 private:
     bool balance;
     int height;
     TreeNode<Type>* root;
+    bool contains(Type value, CTECTree<Type>* currentTree);
 };
 
 #endif /* CTECTree_hpp */
