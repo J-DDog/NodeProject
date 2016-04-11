@@ -15,6 +15,7 @@
 		010EAF4C1C99A50E00675A82 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 010EAF431C99A50E00675A82 /* Node.cpp */; };
 		010EAF4D1C99A50E00675A82 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 010EAF451C99A50E00675A82 /* Timer.cpp */; };
 		0128D0541CBBE38000A77687 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0128D0521CBBE38000A77687 /* TreeNode.cpp */; };
+		0128D0571CBBF4E400A77687 /* CTECTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0128D0551CBBF4E400A77687 /* CTECTree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,8 @@
 		010EAF461C99A50E00675A82 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		0128D0521CBBE38000A77687 /* TreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
 		0128D0531CBBE38000A77687 /* TreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
+		0128D0551CBBF4E400A77687 /* CTECTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECTree.cpp; sourceTree = "<group>"; };
+		0128D0561CBBF4E400A77687 /* CTECTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTECTree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				010EAF461C99A50E00675A82 /* Timer.h */,
 				0128D0521CBBE38000A77687 /* TreeNode.cpp */,
 				0128D0531CBBE38000A77687 /* TreeNode.h */,
+				0128D0551CBBF4E400A77687 /* CTECTree.cpp */,
+				0128D0561CBBF4E400A77687 /* CTECTree.h */,
 			);
 			name = Model;
 			path = NodeProject/Model;
@@ -173,6 +178,7 @@
 				010EAF491C99A50E00675A82 /* ArrayNode.cpp in Sources */,
 				010EAF4B1C99A50E00675A82 /* CTECList.cpp in Sources */,
 				010EAF4A1C99A50E00675A82 /* CTECArray.cpp in Sources */,
+				0128D0571CBBF4E400A77687 /* CTECTree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
