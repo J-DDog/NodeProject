@@ -21,14 +21,20 @@ class CTECTree
     bool contains(Type value);
     Type remove(const Type& value);
     int getHeight();
+    int getSize();
     bool isBalanced();
     TreeNode<Type>* getRoot();
+    void inorderTraversal(TreeNode<Type>* currrentNode);
+    void postorderTraversal(TreeNode<Type>* currentNode);
+    void preorderTraversal(TreeNode<Type>* currentNode);
     
 private:
     bool balance;
     int height;
+    int size;
     TreeNode<Type>* root;
     bool contains(Type value, CTECTree<Type>* currentTree);
+    void calculateSize(TreeNode<Type>* currentNode);
 };
 
 #endif /* CTECTree_hpp */
