@@ -29,40 +29,64 @@ CTECTree<Type>::CTECTree(const Type& value)
 template <class Type>
 bool CTECTree<Type>:: insert(const Type& value)
 {
-    if(contains(value))
+    TreeNode<Type>* newNode = new TreeNode<Type>(value);
+    assert(newNode != nullptr);
+    TreeNode<Type>* current = root;
+    TreeNode<Type>* trailCurrent;
+    if(root == nullptr)
     {
-        return false;
+        root = newNode;
+        return true;
     }
     else
     {
-        if(value < root->getValue())
+        
+        while(current != nullptr)
         {
-            insert(value, root->getLeftChild());
+            trailCurrent = current;
+            if(current-> getValue() == value)
+            {
+                return false;
+            }
+            else if(current->getValue > value)
+            {
+                current = current-> getLeftChild();
+            }
+            else
+            {
+                current = current-> getRightChild();
+            }
+        }
+        
+        if(trailCurrent-> getValue > value)
+        {
+            trailCurrent-> setLeftChild(newNode);
         }
         else
         {
-            insert(value, root->getRightChild());
+            trailCurrent-> setRightChild(newNode);
         }
         return true;
+        
     }
 };
 
 template <class Type>
 bool CTECTree<Type>:: contains(Type value)
 {
-    if(root->getValue() == value)
+    if(root-> getValue() == value)
     {
         return true;
     }
     
-    else if(value < root->getValue())
+    else if(value < root-> getValue())
     {
-        return contains(value, root->getLeftChild());
+        return contains(value, root-> getLeftChild());
     }
     
     else
     {
-        return contains(value, root->getRightChild());
+        return contains(value, root-> getRightChild());
     }
     
     return false;
@@ -76,19 +100,19 @@ bool CTECTree<Type>:: contains(Type value, CTECTree<Type>* currentTree)
         return false;
     }
     
-    if(currentTree->getRoot->getValue() == value)
+    if(currentTree-> getRoot-> getValue() == value)
     {
         return true;
     }
     
-    else if(value < currentTree->getRoot->getValue())
+    else if(value < currentTree-> getRoot-> getValue())
     {
-        return contains(value, currentTree->getRoot->getLeftChild());
+        return contains(value, currentTree-> getRoot-> getLeftChild());
     }
     
     else
     {
-        return contains(value, currentTree->getRoot->getRightChild());
+        return contains(value, currentTree-> getRoot-> getRightChild());
     }
     
     return false;
@@ -97,7 +121,36 @@ bool CTECTree<Type>:: contains(Type value, CTECTree<Type>* currentTree)
 template <class Type>
 Type CTECTree<Type>:: remove(const Type& value)
 {
-    
+    TreeNode<Type>* temp;
+    TreeNode<Type>* current = root;
+    TreeNode<Type>* trailCurrent;
+    if(value == nullptr)
+    {
+        return nullptr;
+    }
+    else
+    {
+        
+        while(current != nullptr)
+        {
+            trailCurrent = current;
+            if(current-> getValue() == value)
+            {
+                return false;
+            }
+            else if(current->getValue > value)
+            {
+                current = current-> getLeftChild();
+            }
+            else
+            {
+                current = current-> getRightChild();
+            }
+        }
+        return true;
+        
+    }
+
 };
 
 template <class Type>
