@@ -121,33 +121,12 @@ bool CTECTree<Type>:: contains(Type value, CTECTree<Type>* currentTree)
 template <class Type>
 Type CTECTree<Type>:: remove(const Type& value)
 {
-    TreeNode<Type>* temp;
-    TreeNode<Type>* current = root;
-    TreeNode<Type>* trailCurrent;
-    if(value == nullptr)
+    if(!contains(value))
     {
-        return nullptr;
+        return value;
     }
     else
     {
-        
-        while(current != nullptr)
-        {
-            trailCurrent = current;
-            if(current-> getValue() == value)
-            {
-                return false;
-            }
-            else if(current->getValue > value)
-            {
-                current = current-> getLeftChild();
-            }
-            else
-            {
-                current = current-> getRightChild();
-            }
-        }
-        return true;
         
     }
 

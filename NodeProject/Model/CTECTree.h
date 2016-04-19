@@ -35,6 +35,8 @@ private:
     TreeNode<Type>* root;
     bool contains(Type value, CTECTree<Type>* currentTree);
     void calculateSize(TreeNode<Type>* currentNode);
+    TreeNode<Type>* getLeftMostChild(CTECTree * leftSubTree);
+    TreeNode<Type>* getRightMostChild(CTECTree * rightSubTree);
 };
 
 #endif /* CTECTree_hpp */
