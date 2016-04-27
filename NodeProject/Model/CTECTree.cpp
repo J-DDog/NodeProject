@@ -7,6 +7,7 @@
 //
 
 #include "CTECTree.h"
+using namespace std;
 
 template <class Type>
 CTECTree<Type>::CTECTree()
@@ -119,18 +120,100 @@ bool CTECTree<Type>:: contains(Type value, CTECTree<Type>* currentTree)
 };
 
 template <class Type>
-Type CTECTree<Type>:: remove(const Type& value)
+void CTECTree<Type>:: remove(const Type& value)
 {
+    TreeNode<Type>* current = root;
+    TreeNode<Type>* trailing = current;
     if(!contains(value))
     {
-        return value;
+        return;
     }
     else
     {
+        while(current != nullptr && current-> getValue() != value)
+        {
+            trailing = current;
+            if(current-> getValue() > value)
+            {
+                current = current-> getLeftChild();
+            }
+            else
+            {
+                current = current-> getRightChild();
+            }
+        }
         
+        if(current == root)
+        {
+            remove(root);
+        }
+        else if(trailing-> getLeftChild() > value)
+        {
+            remove(trailing-> getLeftChild());
+        }
+        else
+        {
+            remove(trailing-> getRightChild());
+        }
     }
 
 };
+
+template <class Type>
+void CTECTree<Type>:: remove(TreeNode<Type>* nodeToRemove)
+{
+    TreeNode<Type>* current;
+    TreeNode<Type>* trailing;
+    TreeNode<Type>* temp;
+    
+    if(nodeToRemove == nullptr)
+    {
+        cerr << "cant Remove an empty non existent thing" << endl;
+    }
+    else if(nodeToRemove-> getRgihtChild() == nullptr && nodeToRemove-> getLeftChild() == nullptr)
+    {
+        temp == nodeToRemove;
+        nodeToRemove = nullptr;
+        delete temp;
+    }
+    else if(nodeToRemove-> getRightChild() == nullptr)
+    {
+        temp == nodeToRemove;
+        nodeToRemove = temp-> getLeftChild();
+        delete temp;
+    }
+    else if(nodeToRemove-> getLeftChild() == nullptr)
+    {
+        temp == nodeToRemove;
+        nodeToRemove = temp->getRightChild;
+        delete temp;
+    }
+    else
+    {
+        current = nodeToRemove-> getLeftChild();
+        trailing = nullptr;
+        
+        while(current-> getRightChild != nullptr)
+        {
+            trailing = current;
+            current = current-> getRightChild();
+        }
+        
+        
+        nodeToRemove-> setValue(current-> getValue);
+        
+        if(trailing == nullptr)
+        {
+            nodeToRemove-> setLeftChild(current-> getLeftChild());
+        }
+        else
+        {
+            trailing-> setRightChild(current-> getLeftChild());
+        }
+        
+        delete current();
+    }
+}
 
 template <class Type>
 int CTECTree<Type>:: getHeight()
@@ -168,6 +251,28 @@ TreeNode<Type>* CTECTree<Type>:: getRoot()
 {
     return this-> root;
 };
+
+template <class Type>
+TreeNode<Type>* CTECTree<Type>:: getLeftMostChild(CTECTree<Type>* leftSubTree)
+{
+    TreeNode<Type>* leftNode = leftSubTree-> getRoot();
+    while(leftNode-> getLeftChild != nullptr)
+    {
+        leftNode = leftNode-> getLeftChild();
+    }
+    return leftNode;
+};
+
+template <class Type>
+TreeNode<Type>* CTECTree<Type>:: getRightMostChild(CTECTree<Type> rightSubTree)
+{
+    TreeNode<Type>* rightNode = rightSubTree-> getRoot();
+    while(rightNode-> getLeftChild != nullptr)
+    {
+        rightNode = rightNode-> getLeftChild();
+    }
+    return rightNode;
+}
 
 template <class Type>
 void CTECTree<Type>:: inorderTraversal(TreeNode<Type>* currentNode)

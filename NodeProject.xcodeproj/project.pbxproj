@@ -16,6 +16,7 @@
 		010EAF4D1C99A50E00675A82 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 010EAF451C99A50E00675A82 /* Timer.cpp */; };
 		0128D0541CBBE38000A77687 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0128D0521CBBE38000A77687 /* TreeNode.cpp */; };
 		0128D0571CBBF4E400A77687 /* CTECTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0128D0551CBBF4E400A77687 /* CTECTree.cpp */; };
+		016B83051CD10B7F00978D66 /* CTECGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 016B83031CD10B7F00978D66 /* CTECGraph.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,8 @@
 		0128D0531CBBE38000A77687 /* TreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
 		0128D0551CBBF4E400A77687 /* CTECTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECTree.cpp; sourceTree = "<group>"; };
 		0128D0561CBBF4E400A77687 /* CTECTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTECTree.h; sourceTree = "<group>"; };
+		016B83031CD10B7F00978D66 /* CTECGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECGraph.cpp; sourceTree = "<group>"; };
+		016B83041CD10B7F00978D66 /* CTECGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTECGraph.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				0128D0531CBBE38000A77687 /* TreeNode.h */,
 				0128D0551CBBF4E400A77687 /* CTECTree.cpp */,
 				0128D0561CBBF4E400A77687 /* CTECTree.h */,
+				016B83031CD10B7F00978D66 /* CTECGraph.cpp */,
+				016B83041CD10B7F00978D66 /* CTECGraph.h */,
 			);
 			name = Model;
 			path = NodeProject/Model;
@@ -177,6 +182,7 @@
 				010EAF471C99A50E00675A82 /* NodeController.cpp in Sources */,
 				010EAF491C99A50E00675A82 /* ArrayNode.cpp in Sources */,
 				010EAF4B1C99A50E00675A82 /* CTECList.cpp in Sources */,
+				016B83051CD10B7F00978D66 /* CTECGraph.cpp in Sources */,
 				010EAF4A1C99A50E00675A82 /* CTECArray.cpp in Sources */,
 				0128D0571CBBF4E400A77687 /* CTECTree.cpp in Sources */,
 			);

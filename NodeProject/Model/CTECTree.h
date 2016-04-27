@@ -19,11 +19,13 @@ class CTECTree
     
     bool insert(const Type& value);
     bool contains(Type value);
-    Type remove(const Type& value);
+    void remove(const Type& value);
     int getHeight();
     int getSize();
     bool isBalanced();
     TreeNode<Type>* getRoot();
+    TreeNode<Type>* getLeftMostChild(CTECTree<Type> leftSubTree);
+    TreeNode<Type>* getRightMostChild(CTECTree<Type> rightSubTree);
     void inorderTraversal(TreeNode<Type>* currrentNode);
     void postorderTraversal(TreeNode<Type>* currentNode);
     void preorderTraversal(TreeNode<Type>* currentNode);
@@ -33,10 +35,11 @@ private:
     int height;
     int size;
     TreeNode<Type>* root;
+    void remove(TreeNode<Type>* nodeToRemove);
     bool contains(Type value, CTECTree<Type>* currentTree);
     void calculateSize(TreeNode<Type>* currentNode);
-    TreeNode<Type>* getLeftMostChild(CTECTree * leftSubTree);
-    TreeNode<Type>* getRightMostChild(CTECTree * rightSubTree);
+    TreeNode<Type>* getLeftMostChild(CTECTree<Type> * leftSubTree);
+    TreeNode<Type>* getRightMostChild(CTECTree<Type> * rightSubTree);
 };
 
 #endif /* CTECTree_hpp */
