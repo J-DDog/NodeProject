@@ -16,6 +16,7 @@
 		010EAF4D1C99A50E00675A82 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 010EAF451C99A50E00675A82 /* Timer.cpp */; };
 		0128D0541CBBE38000A77687 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0128D0521CBBE38000A77687 /* TreeNode.cpp */; };
 		0128D0571CBBF4E400A77687 /* CTECTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0128D0551CBBF4E400A77687 /* CTECTree.cpp */; };
+		01509B8E1CE0D211003A7D91 /* HashNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01509B8C1CE0D211003A7D91 /* HashNode.cpp */; };
 		016B83051CD10B7F00978D66 /* CTECGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 016B83031CD10B7F00978D66 /* CTECGraph.cpp */; };
 		01F53C6A1CDB909A00605AA3 /* HashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F53C681CDB909A00605AA3 /* HashTable.cpp */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,8 @@
 		0128D0531CBBE38000A77687 /* TreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
 		0128D0551CBBF4E400A77687 /* CTECTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECTree.cpp; sourceTree = "<group>"; };
 		0128D0561CBBF4E400A77687 /* CTECTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTECTree.h; sourceTree = "<group>"; };
+		01509B8C1CE0D211003A7D91 /* HashNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashNode.cpp; sourceTree = "<group>"; };
+		01509B8D1CE0D211003A7D91 /* HashNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashNode.h; sourceTree = "<group>"; };
 		016B83031CD10B7F00978D66 /* CTECGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECGraph.cpp; sourceTree = "<group>"; };
 		016B83041CD10B7F00978D66 /* CTECGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTECGraph.h; sourceTree = "<group>"; };
 		01F53C681CDB909A00605AA3 /* HashTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashTable.cpp; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				016B83041CD10B7F00978D66 /* CTECGraph.h */,
 				01F53C681CDB909A00605AA3 /* HashTable.cpp */,
 				01F53C691CDB909A00605AA3 /* HashTable.h */,
+				01509B8C1CE0D211003A7D91 /* HashNode.cpp */,
+				01509B8D1CE0D211003A7D91 /* HashNode.h */,
 			);
 			name = Model;
 			path = NodeProject/Model;
@@ -191,6 +196,7 @@
 				010EAF4A1C99A50E00675A82 /* CTECArray.cpp in Sources */,
 				01F53C6A1CDB909A00605AA3 /* HashTable.cpp in Sources */,
 				0128D0571CBBF4E400A77687 /* CTECTree.cpp in Sources */,
+				01509B8E1CE0D211003A7D91 /* HashNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
