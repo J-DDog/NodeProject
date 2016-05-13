@@ -8,6 +8,7 @@
 
 #include "HashTable.h"
 
+
 template <class Type>
 HashTable<Type>:: HashTable()
 {
@@ -15,7 +16,7 @@ HashTable<Type>:: HashTable()
     this->efficiencyPercentage = .667;
     this->size = 0;
     this->internalStorag = new HashNode<Type>[capacity];
-    
+    this->tableStorage = new CTECList<HashNode<Type>>[capacity];
 };
 
 template <class Type>
@@ -28,6 +29,59 @@ template <class Type>
 int HashTable<Type>:: getSize()
 {
     return this->size;
+};
+
+template <class Type>
+void HashTable<Type>:: addTable(HashNode<Type> currentNode)
+{
+    if(this->tableSize/this->tableCapacity >= this->efficencyPercentage)
+    {
+        updateTableCapacity();
+    }
+    int positionToInsert = findPosition(currentNode);
+    
+    if(tableStorage[positionToInsert] == nullptr)
+    {
+        CTECList<HashNode<Type>> hashList;
+        tableStorage[positionToInsert] + hashList;
+        hashList.addEnd(currentNode);
+    }
+    else
+    {
+        tableStorage[positionToInsert].addEnd(currentNode);
+    }
+};
+
+template <class Type>
+void HashTable<Type>:: updateTableCapacity()
+{
+    int updatedCapacity = getNextPrime();
+    CTECList<HashNode<Type>>* updatedTableStorage = new CTECList<HashNode<Type>> [updatedCapacity];
+    
+    int oldTableCapacity = tableCapacity;
+    tableCapacity = updatedCapacity;
+    
+    for(int index = 0; index < oldTableCapacity; index++)
+    {
+        if(tableStorage[index] != nullptr)
+        {
+            CTECList<HashNode<Type>> temp = tableStorage[index];
+            for(int innerIndex = 0; innerIndex < temp.getSize(); innerIndex++)
+            {
+                int updatedTablePosition = findPosition(temp.getFromIndex(index));
+                if(updatedTableStorage[updatedTablePosition] == nullptr)
+                {
+                    CTECList<HashNode<Type>> updatedList;
+                    updatedList.addEnd(temp.getFromIndex(index));
+                }
+                else
+                {
+                    updatedTableStorage[updatedTablePosition].addEnd(temp.getFromIndex(index));
+                }
+                
+            }
+        }
+    }
 };
 
 template <class Type>
@@ -180,4 +234,14 @@ bool HashTable<Type> :: remove(HashNode<Type> currentNode)
     }
     
     return wasRemoved;
+};
+
+template <class Type>
+int HashTable<Type>::handleCollision(HashNode<Type> currentNode)
+{
+    int reHashedPosition = findPosition(currentNode);
+    int randomEven = rand(capacity);
+    reHashedPosition = randomEven + (reHashedPosition * reHashedPosition) % capacity;
+    
+    return reHashedPosition;
 };

@@ -10,7 +10,7 @@
 #define HASHTABLE_H
 
 #include "CTECArray.h"
-#include "CTECArray.cpp"
+#include "CTECList.h"
 
 #include "HashNode.h"
 
@@ -23,6 +23,8 @@ public:
     HashTable();
     ~HashTable();
     
+    void addTable(HashNode<Type> currentNode);
+    
     void add(HashNode<Type> currentNode);
     bool remove(HashNode<Type> currentNode);
     bool contains(HashNode<Type> currentNode);
@@ -30,14 +32,18 @@ public:
     
 private:
     int capacity;
+    int tableCapacity;
     double efficiencyPercentage;
     int size;
+    int tableSize;
     Type * internalStorage;
     HashNode<Type> * internalArray;
+    CTECList<HashNode<Type>> tableStorage;
     
     int findPosition(HashNode<Type> currentNode);
     int handleCollision(HashNode<Type> currentNode);
     void updateSize();
+    void updateTableCapacity();
     
     int getNextPrime();
     bool isPrime(int candidateNumber);
