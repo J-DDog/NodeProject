@@ -18,6 +18,7 @@
 #include "../Model/CTECArray.cpp"
 #include "../Model/CTECList.h"
 #include "../Model/CTECList.cpp"
+#include "../Model/HashTable.h"
 #include "../Model/Timer.h"
 
 using namespace std;
@@ -47,6 +48,8 @@ private:
     int partition(int first, int last);
     void swap(int first, int last);
     void print();
+    
+    void testHashTable();
 };
 
 #endif /* COM_CTEC_CONTROLLER_NODECONTROLLER_H_ */

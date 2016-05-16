@@ -9,8 +9,7 @@
 #include "HashNode.h"
 
 template <class Type>
-HashNode<Type>:: HashNode()
-{};
+HashNode<Type>:: HashNode(){};
 
 template <class Type>
 HashNode<Type>:: HashNode(int key, const Type& value)

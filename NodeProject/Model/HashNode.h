@@ -27,6 +27,4 @@ private:
     
 };
 
-#include <stdio.h>
-
-#endif /* HashNode_hpp */
+#endif /* HashNode_h */

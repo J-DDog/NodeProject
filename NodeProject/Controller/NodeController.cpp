@@ -190,3 +190,28 @@ void NodeController:: swap(int first, int last)
 {
     
 }
+
+void NodeController:: testHashTable()
+{
+    HashTable<int> tempTable;
+    HashNode<int> tempArray[10];
+    for(int spot = 0; spot < 10; spot++)
+    {
+        int randomValue = rand();
+        int randomkey = rand();
+        HashNode<int> temp = HashNode<int>(randomkey, randomValue);
+        tempTable.add(temp);
+        tempArray[spot] = temp;
+    }
+    bool test = tempTable.contains(tempArray[0]);
+    string result;
+    if(test)
+    {
+        result = "its there";
+    }
+    else
+    {
+        result = "not anywhere";
+    }
+    cout << result << endl;
+}

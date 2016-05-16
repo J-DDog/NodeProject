@@ -15,7 +15,7 @@ HashTable<Type>:: HashTable()
     this->capacity = 101;
     this->efficiencyPercentage = .667;
     this->size = 0;
-    this->internalStorag = new HashNode<Type>[capacity];
+    this->internalStorag = new HashNode<Type>*[capacity];
     this->tableStorage = new CTECList<HashNode<Type>>[capacity];
 };
 
@@ -104,12 +104,9 @@ void HashTable<Type>:: add(HashNode<Type> currentNode)
             {
                 positionToInsert = (positionToInsert + 1) % capacity;
             }
-            internalStorage[positionToInsert] = currentNode;
         }
-        else
-        {
-            internalStorage[positionToInsert] = currentNode;
-        }
+        internalStorage[positionToInsert] = &currentNode;
+        size++;
     }
 };
 
@@ -172,7 +169,7 @@ template <class Type>
 void HashTable<Type> :: updateSize()
 {
     int updatedCapacity = getNextPrime();
-    HashNode<Type>* updatedStorage = new HashTable<Type> [updatedCapacity];
+    HashNode<Type>** updatedStorage = new HashTable<Type>*[updatedCapacity];
     
     int oldCapacity = capacity;
     capacity = updatedCapacity;
@@ -181,7 +178,7 @@ void HashTable<Type> :: updateSize()
     {
         if( internalStorage[index] != nullptr)
         {
-            int updatedPosition = findPosition(internalStorage[index]);
+            int updatedPosition = findPosition(*internalStorage[index]);
             updatedStorage[updatedPosition] = internalStorage[index];
         }
     }
